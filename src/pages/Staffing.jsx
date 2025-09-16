@@ -105,12 +105,40 @@ export default function Staffing() {
           </Table>
         </Box>
         <Box margin={{ top: 'small' }}>
-          <Text size="small">Members: {summary?.total_members ?? finalTeam.reduce((a, r) => a + (r.count || 0), 0)}</Text>
-          <Text size="small">Allocation: {summary?.allocation ?? '—'}</Text>
-          <Text size="small">Average Rate (INR/hr): {summary?.average_rate_inr_hr ?? '—'}</Text>
-          <Text size="small">Effective Hours: {summary?.effective_hours ?? '—'}</Text>
-          <Text size="small">Total Cost (INR): {summary?.total_cost_inr ?? totalCostInr}</Text>
-          <Text size="small">Total Cost (USD): {summary?.total_cost_usd ?? '—'}</Text>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableCell scope="col"><strong>Metric</strong></TableCell>
+                <TableCell scope="col"><strong>Value</strong></TableCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Members</TableCell>
+                <TableCell>{summary?.total_members ?? finalTeam.reduce((a, r) => a + (r.count || 0), 0)}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Allocation</TableCell>
+                <TableCell>{summary?.allocation ?? '—'}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Average Rate (INR/hr)</TableCell>
+                <TableCell>{summary?.average_rate_inr_hr ?? '—'}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Effective Hours</TableCell>
+                <TableCell>{summary?.effective_hours ?? '—'}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Total Cost (INR)</TableCell>
+                <TableCell>{summary?.total_cost_inr ?? totalCostInr}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Total Cost (USD)</TableCell>
+                <TableCell>{summary?.total_cost_usd ?? '—'}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </Box>
       </Box>
     </Box>

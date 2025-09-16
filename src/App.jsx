@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Box } from 'grommet'
 import Nav from './components/Nav.jsx'
+import Footer from './components/Footer.jsx'
 import Projects from './pages/Projects.jsx'
 import Analyze from './pages/Analyze.jsx'
 import Architectures from './pages/Architectures.jsx'
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/staffing" element={<Staffing />} />
         </Routes>
       </Box>
+      <Footer />
     </Box>
   )
 }

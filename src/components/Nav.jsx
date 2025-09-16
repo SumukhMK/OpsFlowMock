@@ -1,15 +1,14 @@
 import React from 'react'
-import { Header, Nav as GrommetNav, Anchor, Box, Text } from 'grommet'
+import { Header, Nav as GrommetNav, Anchor, Box, Text, Image } from 'grommet'
 import { Link } from 'react-router-dom'
+import hpeLogo from '../../hpe2.png'
 
 export default function Nav() {
   return (
     <Header pad={{ horizontal: 'medium', vertical: 'small' }} background="background-contrast">
       <Box direction="row" gap="small" align="center">
-        <Box round background="brand" pad={{ vertical: 'xsmall', horizontal: 'small' }}>
-          <Text weight="bold" color="white">HPE</Text>
-        </Box>
-        <Text weight="bold">Opsflow (Mock)</Text>
+        <Image src={hpeLogo} alt="HPE" style={{ height: 28, width: 'auto' }} fit="contain" />
+        <Text weight="bold">Opsflow</Text>
       </Box>
       <GrommetNav direction="row">
         <Anchor as={Link} label="Projects" to="/projects" />
