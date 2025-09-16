@@ -35,7 +35,15 @@ export default function Architectures() {
 
       <Grid columns={{ count: 'fit', size: 'medium' }} gap="medium">
         {(cfg?.pairs || []).map(pair => (
-          <Card key={pair.id} background={selected === pair.id ? 'background-back' : 'background'}>
+          <Card
+            key={pair.id}
+            background={selected === pair.id ? 'background-back' : 'background'}
+            border={selected === pair.id ? { color: '#01A982', size: '2px' } : undefined}
+            onClick={() => setSelected(pair.id)}
+            hoverIndicator
+            pad="xsmall"
+            round="xsmall"
+          >
             <CardHeader pad="small"><Text weight="bold">{pair.title}</Text></CardHeader>
             <CardBody pad="small">
               <Box direction="row" gap="small">

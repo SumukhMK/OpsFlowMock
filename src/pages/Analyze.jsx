@@ -145,7 +145,13 @@ export default function Analyze() {
                     <TableRow key={idx}>
                       <TableCell>{r.field}</TableCell>
                       <TableCell>
-                        <TextInput value={r.editValue} onChange={(e) => onEditRow(idx, e.target.value)} disabled={r.locked} />
+                        <Box
+                          round="xsmall"
+                          pad="xxsmall"
+                          border={r.status === 'Confirmed' ? { color: '#01A982', size: '2px' } : undefined}
+                        >
+                          <TextInput value={r.editValue} onChange={(e) => onEditRow(idx, e.target.value)} disabled={r.locked} />
+                        </Box>
                       </TableCell>
                       <TableCell>{r.status}</TableCell>
                       <TableCell>
