@@ -1,0 +1,13 @@
+{
+  "team_requirements": [
+    { "role": "Solution Architect", "skills": ["Hybrid Cloud", "TOGAF", "Kubernetes"], "count": 2 },
+    { "role": "Cloud Engineer", "skills": ["AWS", "Azure", "Terraform", "Kubernetes"], "count": 4 },
+    { "role": "Data Engineer", "skills": ["Kafka", "Streaming", "Postgres"], "count": 3 },
+    { "role": "DevOps Engineer", "skills": ["CI/CD", "IaC", "GitOps"], "count": 2 },
+    { "role": "Security Engineer", "skills": ["GDPR", "IAM", "Encryption"], "count": 2 },
+    { "role": "Business Analyst", "skills": ["Requirements", "Compliance"], "count": 2 },
+    { "role": "QA Engineer", "skills": ["Automation", "API Testing"], "count": 2 },
+    { "role": "Project Manager", "skills": ["Agile", "Migration"], "count": 1 },
+    { "role": "Ops/SRE", "skills": ["Monitoring", "SLOs", "Incident Management"], "count": 2 }
+  ]
+}

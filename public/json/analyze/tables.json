@@ -1,0 +1,24 @@
+{
+  "layout": { "sideBySide": true },
+  "bulkActions": { "enableBulkConfirm": true, "bulkConfirmLabel": "Confirm All" },
+  "tables": {
+    "as_is": {
+      "title": "As Is",
+      "columns": [
+        { "field": "field", "label": "Field" },
+        { "field": "value", "label": "Current" }
+      ],
+      "editable": false
+    },
+    "to_be": {
+      "title": "To Be",
+      "columns": [
+        { "field": "field", "label": "Field" },
+        { "field": "value", "label": "Proposed" },
+        { "field": "status", "label": "Status" }
+      ],
+      "editable": true,
+      "actions": { "perField": ["edit", "confirm"], "confirmDisablesFurtherEdits": true }
+    }
+  }
+}

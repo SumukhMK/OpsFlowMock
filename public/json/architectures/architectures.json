@@ -1,0 +1,59 @@
+{
+  "page": {
+    "title": "Architecture Selection",
+    "intro": "Choose one architecture pair (As-Is and To-Be). Images will be added later.",
+    "note": "Place images under /public/assets/architectures/"
+  },
+  "pairs": [
+    {
+      "id": "v1",
+      "title": "Version 1",
+      "as_is": {
+        "title": "As-Is V1",
+        "image": "/assets/architectures/as-is/v1.png",
+        "description": "Placeholder description for As-Is V1",
+        "tradeoffs": []
+      },
+      "to_be": {
+        "title": "To-Be V1",
+        "image": "/assets/architectures/to-be/v1.png",
+        "description": "Placeholder description for To-Be V1",
+        "tradeoffs": []
+      }
+    },
+    {
+      "id": "v2",
+      "title": "Version 2",
+      "as_is": {
+        "title": "As-Is V2",
+        "image": "/assets/architectures/as-is/v2.png",
+        "description": "Placeholder description for As-Is V2",
+        "tradeoffs": []
+      },
+      "to_be": {
+        "title": "To-Be V2",
+        "image": "/assets/architectures/to-be/v2.png",
+        "description": "Placeholder description for To-Be V2",
+        "tradeoffs": []
+      }
+    },
+    {
+      "id": "v3",
+      "title": "Version 3",
+      "as_is": {
+        "title": "As-Is V3",
+        "image": "/assets/architectures/as-is/v3.png",
+        "description": "Placeholder description for As-Is V3",
+        "tradeoffs": []
+      },
+      "to_be": {
+        "title": "To-Be V3",
+        "image": "/assets/architectures/to-be/v3.png",
+        "description": "Placeholder description for To-Be V3",
+        "tradeoffs": []
+      }
+    }
+  ],
+  "selection": { "requireSelection": true, "mode": "pick_one_pair" },
+  "actions": { "confirmLabel": "Confirm Selection", "toastSuccess": "Architecture pair confirmed." }
+}

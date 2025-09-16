@@ -1,0 +1,9 @@
+{
+  "title": "Projects",
+  "columns": [
+    { "field": "project_name", "label": "Project Name", "align": "start" },
+    { "field": "ope_id", "label": "OPE ID", "align": "center" },
+    { "field": "description", "label": "Description", "align": "start" }
+  ],
+  "actions": { "allowEdit": false, "allowDelete": false }
+}

@@ -1,0 +1,9 @@
+{
+  "projects": [
+    {
+      "ope_id": "OPE-2025-001",
+      "project_name": "Cloud Modernization & Vendor Unlock",
+      "description": "Migrate from vendor-locked on-prem infrastructure to a hybrid cloud model with modern tooling."
+    }
+  ]
+}

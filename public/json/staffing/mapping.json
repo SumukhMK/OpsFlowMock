@@ -1,0 +1,13 @@
+{
+  "mapping": [
+    { "role": "Solution Architect", "employees": ["Deepika Reddy", "Maria Garcia"], "availability": "Available" },
+    { "role": "Cloud Engineer", "employees": ["Sarah Mitchell", "Vikram Singh", "Carlos Rodriguez", "Rachel Green"], "availability": "Mixed (Carlos overbooked)" },
+    { "role": "Data Engineer", "employees": ["Emily Watson", "Mark Stevens", "Shruti Joshi"], "availability": "Mixed (Emily & Mark overbooked)" },
+    { "role": "DevOps Engineer", "employees": ["Smitha Nair", "Carlos Rodriguez"], "availability": "Overbooked but allocated" },
+    { "role": "Security Engineer", "employees": ["Lisa Thompson", "Nidhi Agrawal", "Benjamin Lee"], "availability": "Overbooked but allocated" },
+    { "role": "Business Analyst", "employees": ["Anita Gupta", "Priyanka Roy"], "availability": "Available" },
+    { "role": "QA Engineer", "employees": ["Arun Patel", "Priya Sharma"], "availability": "Available" },
+    { "role": "Project Manager", "employees": ["Thomas Brown"], "availability": "Slightly overbooked but allocated" },
+    { "role": "Ops/SRE", "employees": ["Gregory Taylor", "Kevin Martinez"], "availability": "Mixed (Kevin overbooked)" }
+  ]
+}

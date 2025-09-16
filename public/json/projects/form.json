@@ -1,0 +1,10 @@
+{
+  "title": "Create Project",
+  "description": "Enter project details to add to the list.",
+  "fields": [
+    { "name": "project_name", "label": "Project Name", "type": "text", "required": true },
+    { "name": "ope_id", "label": "OPE ID", "type": "text", "required": true },
+    { "name": "description", "label": "Project Description", "type": "textarea", "required": true }
+  ],
+  "actions": { "submitLabel": "Add Project" }
+}

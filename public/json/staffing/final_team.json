@@ -1,0 +1,21 @@
+{
+  "final_team": [
+    { "role": "Solution Architect", "count": 2, "jl": ["Master", "Expert"], "rate_inr_hr": 1600 },
+    { "role": "Cloud Engineer", "count": 4, "jl": ["Expert", "Intermediate"], "rate_inr_hr": 900 },
+    { "role": "Data Engineer", "count": 3, "jl": ["Specialist", "Expert"], "rate_inr_hr": 1000 },
+    { "role": "DevOps Engineer", "count": 2, "jl": ["Specialist"], "rate_inr_hr": 750 },
+    { "role": "Security Engineer", "count": 2, "jl": ["Specialist", "Expert"], "rate_inr_hr": 1000 },
+    { "role": "Business Analyst", "count": 2, "jl": ["Intermediate"], "rate_inr_hr": 400 },
+    { "role": "QA Engineer", "count": 2, "jl": ["Entry", "Intermediate"], "rate_inr_hr": 300 },
+    { "role": "Project Manager", "count": 1, "jl": ["Expert"], "rate_inr_hr": 1200 },
+    { "role": "Ops/SRE", "count": 2, "jl": ["Specialist", "Intermediate"], "rate_inr_hr": 600 }
+  ],
+  "summary": {
+    "total_members": 20,
+    "allocation": "45%",
+    "average_rate_inr_hr": 850,
+    "effective_hours": 9500,
+    "total_cost_inr": 8070000,
+    "total_cost_usd": 95000
+  }
+}

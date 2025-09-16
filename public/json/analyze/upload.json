@@ -1,0 +1,8 @@
+{
+  "title": "Upload Transcript",
+  "helperText": "Accepted file types: .txt, .vtt (max 10MB)",
+  "accept": [".txt", ".vtt"],
+  "maxSizeMB": 10,
+  "buttons": { "uploadLabel": "Upload", "analyzeLabel": "Analyze" },
+  "states": { "analyzeDisabledUntilUpload": true }
+}
