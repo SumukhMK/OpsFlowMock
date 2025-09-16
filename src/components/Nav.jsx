@@ -8,7 +8,7 @@ export default function Nav() {
     <Header pad={{ horizontal: 'medium', vertical: 'small' }} background="background-contrast">
       <Box direction="row" gap="small" align="center">
         <Image src={hpeLogo} alt="HPE" style={{ height: 28, width: 'auto' }} fit="contain" />
-        <Text weight="bold">Opsflow</Text>
+        <Text weight="bold">OPSFLOW</Text>
       </Box>
       <GrommetNav direction="row">
         <Anchor as={Link} label="Projects" to="/projects" />
