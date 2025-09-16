@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Box fill>
       <Nav />
-      <Box pad={{ horizontal: 'medium', bottom: 'medium' }}>
+      <Box pad={{ horizontal: 'medium', bottom: 'medium' }} flex overflow={{ vertical: 'auto', horizontal: 'auto' }}>
         <Routes>
           <Route path="/" element={<Navigate to="/projects" replace />} />
           <Route path="/projects" element={<Projects />} />
