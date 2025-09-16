@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Box, Button, FileInput, Heading, Layer, Notification, Table, TableBody, TableCell, TableHeader, TableRow, Text, TextInput } from 'grommet'
 import { fetchJson } from '../utils/fetchJson'
+import { useNavigate } from 'react-router-dom'
 
 function flattenResults(results) {
   // Convert nested keys to a flat list of field/value pairs for simple table rendering
@@ -33,6 +34,7 @@ export default function Analyze() {
 
   const [asIsRows, setAsIsRows] = useState([])
   const [toBeRows, setToBeRows] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function load() {
@@ -93,6 +95,7 @@ export default function Analyze() {
 
   const asIsCols = tablesCfg?.tables?.as_is?.columns || []
   const toBeCols = tablesCfg?.tables?.to_be?.columns || []
+  const allConfirmed = useMemo(() => toBeRows.length > 0 && toBeRows.every(r => r.status === 'Confirmed'), [toBeRows])
 
   return (
     <Box gap="medium">
@@ -101,6 +104,22 @@ export default function Analyze() {
       <Box direction="row" gap="small" align="center">
         <FileInput onChange={onUpload} name="file" />
         <Button label={(uploadCfg?.buttons?.analyzeLabel) || 'Analyze'} primary disabled={!uploaded} onClick={onAnalyze} />
+      </Box>
+
+      <Box
+        direction="row"
+        justify="end"
+        pad={{ vertical: 'medium', horizontal: 'small' }}
+        background="background-contrast"
+        style={{ position: 'sticky', top: 0, zIndex: 1 }}
+      >
+        <Button
+          label="Select Architecture"
+          size="large"
+          primary
+          disabled={!allConfirmed}
+          onClick={() => navigate('/architectures')}
+        />
       </Box>
 
       {asIsRows.length > 0 && (
@@ -165,6 +184,7 @@ export default function Analyze() {
           </Box>
         </Box>
       )}
+
 
       {toast && (
         <Layer position="bottom" modal={false} margin={{ bottom: 'small' }} onEsc={() => setToast(null)} onClickOutside={() => setToast(null)}>

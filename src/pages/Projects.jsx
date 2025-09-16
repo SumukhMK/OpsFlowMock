@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Box, Button, Form, FormField, Heading, Text, TextArea, TextInput,
   Grid, PageHeader, DataTable, Card, CardHeader, CardBody, CardFooter
@@ -10,6 +11,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [formValue, setFormValue] = useState({ project_name: '', ope_id: '', description: '' })
+  const navigate = useNavigate()
 
   useEffect(() => {
     const loadData = async () => {
@@ -72,6 +74,13 @@ export default function Projects() {
       property: 'description', 
       header: 'Description',
       render: d => <Text truncate>{d.description}</Text> 
+    },
+    {
+      property: 'actions',
+      header: '',
+      render: d => (
+        <Button size="small" label="Analyze" onClick={() => navigate('/analyze')} />
+      ),
     },
   ]
 

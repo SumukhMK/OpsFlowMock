@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Button, Card, CardBody, CardHeader, Grid, Heading, Image, Layer, Notification, RadioButtonGroup, Text } from 'grommet'
+import { Box, Button, Heading, Layer, Notification, RadioButtonGroup, Text } from 'grommet'
 import { fetchJson } from '../utils/fetchJson'
+import { useNavigate } from 'react-router-dom'
+import ArchitectureGrid from '../components/ArchitectureGrid'
 
 export default function Architectures() {
   const [cfg, setCfg] = useState(null)
   const [selected, setSelected] = useState(null)
   const [toast, setToast] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchJson('/json/architectures/architectures.json')
@@ -19,6 +22,7 @@ export default function Architectures() {
       return
     }
     setToast({ status: 'normal', message: 'Architecture pair confirmed.' })
+    navigate('/staffing')
   }
 
   return (
@@ -33,42 +37,16 @@ export default function Architectures() {
         onChange={event => setSelected(event.target.value)}
       />
 
-      <Grid columns={{ count: 'fit', size: 'medium' }} gap="medium">
-        {(cfg?.pairs || []).map(pair => (
-          <Card
-            key={pair.id}
-            background={selected === pair.id ? 'background-back' : 'background'}
-            border={selected === pair.id ? { color: '#01A982', size: '2px' } : undefined}
-            onClick={() => setSelected(pair.id)}
-            hoverIndicator
-            pad="xsmall"
-            round="xsmall"
-          >
-            <CardHeader pad="small"><Text weight="bold">{pair.title}</Text></CardHeader>
-            <CardBody pad="small">
-              <Box direction="row" gap="small">
-                <Box width="small">
-                  {/* Placeholder image; replace when assets added */}
-                  <Image fit="contain" src={pair.as_is.image} alt={pair.as_is.title} fallback="" />
-                </Box>
-                <Box fill>
-                  <Heading level={4} margin={{ top: 'none', bottom: 'xsmall' }}>{pair.as_is.title}</Heading>
-                  <Text size="small">{pair.as_is.description}</Text>
-                </Box>
-              </Box>
-              <Box direction="row" gap="small" margin={{ top: 'small' }}>
-                <Box width="small">
-                  <Image fit="contain" src={pair.to_be.image} alt={pair.to_be.title} fallback="" />
-                </Box>
-                <Box fill>
-                  <Heading level={4} margin={{ top: 'none', bottom: 'xsmall' }}>{pair.to_be.title}</Heading>
-                  <Text size="small">{pair.to_be.description}</Text>
-                </Box>
-              </Box>
-            </CardBody>
-          </Card>
-        ))}
-      </Grid>
+      <ArchitectureGrid
+        pairs={cfg?.pairs || []}
+        selected={selected}
+        onSelect={setSelected}
+        imageMap={{
+          v1: { as_is: '/assets/architectures/v1asis.png', to_be: '/assets/architectures/v1tobe.png' },
+          v2: { as_is: '/assets/architectures/v2asis.png', to_be: '/assets/architectures/v2tobe.png' },
+          v3: { as_is: '/assets/architectures/v3asis.png', to_be: '/assets/architectures/v3tobe.png' },
+        }}
+      />
 
       <Box>
         <Button primary label={cfg?.actions?.confirmLabel || 'Confirm Selection'} onClick={onConfirm} />
